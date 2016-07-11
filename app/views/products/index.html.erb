@@ -1,0 +1,16 @@
+<h2>All <%= products.count %> Products</h2>
+
+<% products.each do |product| %>
+  <header>
+    <h3><a href="/products/<%= product.id %>"<%= product.name %></a>
+
+      <p><%= product.name %></p>
+      <p><%= product.price %></p>
+      <p><%= product.condition %></p>
+      <p><%= product.on_clearance %></p>
+      <p><%= product.quantity %></p>
+
+    </h3>
+
+  </header>
+<% end %>
