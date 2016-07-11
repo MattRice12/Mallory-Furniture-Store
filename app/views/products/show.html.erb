@@ -1,0 +1,13 @@
+<h2><%= product.name %></h2>
+
+<header>
+  <p><%= product.condition %></p>
+  <p><%= "$#{product.discount}" %>
+    <% if product.on_clearance %>
+      <%= " - 10% off!! (Original price = $#{product.price * 1.1})" if product.condition.downcase == 'average' %>
+      <%= " - 20% off!! (Original price = $#{product.price * 1.2})" if product.condition.downcase == 'good' %>
+    <% end %></p>
+
+  <p><%= "#{product.quantity} items left in stock!" %></p>
+
+</header>

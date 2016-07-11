@@ -2,15 +2,17 @@
 
 <% products.each do |product| %>
   <header>
-    <h3><a href="/products/<%= product.id %>"<%= product.name %></a>
+    <h3><a href="/products/<%= product.id %>"> <%= product.name %></a></h3>
 
-      <p><%= product.name %></p>
-      <p><%= product.price %></p>
       <p><%= product.condition %></p>
-      <p><%= product.on_clearance %></p>
-      <p><%= product.quantity %></p>
+      <p><%= "$#{product.discount}" %>
+        <% if product.on_clearance %>
+          <%= " - 10% off!! (Original price = $#{product.price * 1.1})" if product.condition.downcase == 'average' %>
+          <%= " - 20% off!! (Original price = $#{product.price * 1.2})" if product.condition.downcase == 'good' %>
+        <% end %></p>
 
-    </h3>
+      <p><%= "#{product.quantity} items left in stock!" %></p>
+
 
   </header>
 <% end %>
