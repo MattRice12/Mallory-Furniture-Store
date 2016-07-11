@@ -6,11 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+condition_arr = ["Good", "Fair", "Bad", "Absolute Shit"]
+
 5.times do
-  Product.create(name: "Desk",
-                 price: 10.00,
-                 condition: "Good",
-                 on_clearance: rand(0..1),
-                 quantity: rand(1..10)
+  Product.create!(name: Faker::Commerce.product_name,
+                  price: rand(1..100).round,
+                  condition: condition_arr.sample,
+                  on_clearance: rand(0..1),
+                  quantity: rand(1..100)
                   )
 end
