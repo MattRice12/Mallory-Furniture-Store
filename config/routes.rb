@@ -3,6 +3,6 @@ Rails.application.routes.draw do
 
   get 'products/:id', to: 'products#show'
   get 'products/', to: 'products#index'
-  root 'products#index'
+  root 'dashboard#index'
 
 end

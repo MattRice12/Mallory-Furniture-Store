@@ -1,5 +1,4 @@
 class ProductsController < ApplicationController
-
   def index
     render template: 'products/index.html.erb', locals: {
       products: Product.all
