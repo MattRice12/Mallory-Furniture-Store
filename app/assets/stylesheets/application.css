@@ -103,23 +103,29 @@ div.index_transbox {
   float: left;
   background-color: #E5D9A9;
   border: 1px solid black;
-  width: 265px;
-  height: 400px;
+  width: auto;
+  height: 450px;
 }
 
 div.index_transbox img {
-  height: auto;
-  width: 200px;
+  float: left;
+  height: 200px;
+  width: auto;
   border: 1px solid black;
   margin: 30px;
 }
 
+div.index_transbox h3 {
+  text-align: center;
+  border: none;
+}
+
 div.index_transbox p {
+  text-align: center;
   margin: 3%;
   font-weight: bold;
   color: #000;
 }
-
 
 /************** Item Descriptions : SHOW ****************/
 
@@ -133,7 +139,7 @@ div.show_transbox {
 div.show_transbox img {
   float: left;
   height: 300px;
-  width: 300px;
+  width: auto;
   border: 1px solid black;
   position: relative;
   left: 5%;
@@ -144,7 +150,7 @@ div.show_transbox h3 {
   text-align: left;
   position: relative;
   left: 10%;
-  padding-top: 2%;
+  padding-top: 1%;
 }
 
 div.show_transbox p {
