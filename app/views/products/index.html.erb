@@ -31,7 +31,7 @@
 
       <p><%= "Quality: #{product.condition}" %></p>
 
-      <p><%= "$#{product.discount}" %>
+      <p><%= "Price: $#{product.discount}" %>
         <% if product.on_clearance %>
           <%= " - Clearance: 10% off! (Original price = $#{(product.price / 0.9).round})" if product.condition.downcase == 'fair' %>
           <%= " - Clearance: 20% off! (Original price = $#{(product.price / 0.8).round})" if product.condition.downcase == 'good' %>
