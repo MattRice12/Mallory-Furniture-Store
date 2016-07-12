@@ -8,7 +8,7 @@ class Product < ApplicationRecord
   def discount
     if on_clearance
       self.price *= 0.9 if condition.downcase == "good"
-      self.price *= 0.8 if condition.downcase == "average"
+      self.price *= 0.8 if condition.downcase == "fair"
     end
       self.price
   end

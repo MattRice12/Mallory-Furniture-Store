@@ -13,3 +13,134 @@
  *= require_tree .
  *= require_self
  */
+
+
+nav {
+  overflow: hidden;
+}
+
+nav {
+  background: #E5D9A9;
+  border: 1px solid black;
+
+}
+
+/************ DASHBOARD **************/
+
+.Business_Name {
+  margin: 5px 0px;
+  text-align: center;
+  background: #2E3E4F;
+  padding: 20px;
+  color: white;
+}
+
+nav body {
+  background-color: rgba(0,0,0,.5);
+}
+
+.dash1 {
+  text-align: right;
+  background: #E5D9A9;
+  margin: 25px 5px;
+  border: none;
+}
+
+.dash2 {
+  text-align: right;
+  background: #E5D9A9;
+  margin: 15px 5px;
+  border: none;
+}
+
+.button {
+  float: right;
+  display: block;
+  width: 170px;
+  height: 15px;
+  background: #307CB5;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/**************************/
+
+h3 {
+  text-align: center;
+  background: white;
+  border: 1px solid black;
+}
+
+nav div {
+  opacity: 0.5;
+}
+
+h5 {
+  margin: 5px;
+}
+
+
+/********** HOME/BACK BUTTONS ***********/
+
+.nav-links.home img {
+  float: right;
+  height: 50px;
+  width: 50px;
+
+  margin: 10px;
+}
+
+.nav-links.back img {
+  float: right;
+  height: 50px;
+  width: 50px;
+  margin: 10px;
+}
+
+/********** BUTTONS ***********/
+
+
+div.index_transbox {
+  float: left;
+  background-color: #E5D9A9;
+  border: 1px solid black;
+  width: 265px;
+  height: 400px;
+}
+
+div.index_transbox img {
+  height: 132px;
+  width: 200px;
+  border: 1px solid black;
+  margin: 30px;
+}
+
+div.index_transbox p {
+  margin: 3%;
+  font-weight: bold;
+  color: #000;
+}
+
+div.show_transbox {
+  float: left;
+  background-color: #E5D9A9;
+  border: 1px solid black;
+}
+
+div.show_transbox img {
+  height: 132px;
+  width: 200px;
+  border: 1px solid black;
+  margin: 30px;
+}
+
+div.show_transbox p {
+  margin: 3%;
+  font-weight: bold;
+  color: #000;
+}

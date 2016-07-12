@@ -1,7 +1,7 @@
 class DashboardController < ApplicationController
 
   def index
-    render template: 'products/root.html.erb'
+    render template: 'dashboard/index.html.erb'
   end
-  
+
 end

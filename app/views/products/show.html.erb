@@ -1,17 +1,29 @@
-<h2> Mallory Furniture </h2>
-<h4><a href="/"> Home </a></h4>
-<h4><a href="/products/"> Products </a></h4>
+<nav>
+  <h2><a href="/" class="nav-links home">
+            <img src="https://lh6.ggpht.com/MoYMYZHfiHaoWl0uhLO2z0xZjq48a2hHnPF52zg7McCHSM8Raz-dNBI7rf4HhN2phOY=w170"/>  </a></h2>
 
-<h3><%= product.name %></h3>
+  <h2><a href="/products/" class="nav-links back" >
+            <img src="https://www.wallcharts.com/html5/objects/Wallcharts/images/back_img@src.png"/></a></h2>
+</nav>
+<body>
 
-<header>
-  <p><%= product.condition %></p>
-  <p><%= "$#{product.discount}" %>
-    <% if product.on_clearance %>
-      <%= " - 10% off!! (Original price = $#{product.price * 1.1})" if product.condition.downcase == 'average' %>
-      <%= " - 20% off!! (Original price = $#{product.price * 1.2})" if product.condition.downcase == 'good' %>
-    <% end %></p>
+<div class="show_transbox">
+    <a href="https://upload.wikimedia.org/wikipedia/commons/6/6b/Hermes_Ostrich_Birkin_Bag.jpg">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Hermes_Ostrich_Birkin_Bag.jpg"/>
+    </a>
 
-  <p><%= "#{product.quantity} items left in stock!" %></p>
+    <h3> <%= product.name %> </h3>
 
-</header>
+      <p><%= "Quality: #{product.condition}" %></p>
+
+      <p><%= "$#{product.discount}" %>
+        <% if product.on_clearance %>
+          <%= " - Clearance: 10% off! (Original price = $#{(product.price / 0.9).round})" if product.condition.downcase == 'fair' %>
+          <%= " - Clearance: 20% off! (Original price = $#{(product.price / 0.8).round})" if product.condition.downcase == 'good' %>
+        <% end %></p>
+
+      <p><%= "#{product.quantity} items left in stock!" %></p>
+  </div>
+
+
+</body>
