@@ -8,26 +8,9 @@
 <body>
 
 <div class="show_transbox">
-  <% if product.name.downcase.include?("lamp")%>
-    <a href="http://ab.weimgs.com/weimgs/ab/images/wcm/products/201616/0062/small-pillar-table-lamp-marble-c.jpg">
-      <img src="http://ab.weimgs.com/weimgs/ab/images/wcm/products/201616/0062/small-pillar-table-lamp-marble-c.jpg"/>
-    </a>
-  <% elsif product.name.downcase.include?("plate") %>
-    <a href="http://www.bluepheasant.com/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/b/l/bluepheasant_eleni_white_plates.jpg"/>
-      <img src="http://www.bluepheasant.com/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/b/l/bluepheasant_eleni_white_plates.jpg"/></a>
-  <% elsif product.name.downcase.include?("shirt") %>
-    <a href="http://www.chainmail.net/images/uploads/steel-shirt-front.jpg"/>
-      <img src="http://www.chainmail.net/images/uploads/steel-shirt-front.jpg"/></a>
-  <% elsif product.name.downcase.include?("pants") %>
-    <a href="https://cdnc.lystit.com/photos/7b10-2014/07/22/berek-gold-copper-reptile-print-pants-6-product-1-21937480-3-928234625-normal.jpeg"/>
-      <img src="https://cdnc.lystit.com/photos/7b10-2014/07/22/berek-gold-copper-reptile-print-pants-6-product-1-21937480-3-928234625-normal.jpeg"/></a>
-  <% elsif product.name.downcase.include?("bottle") %>
-    <a href="http://previews.123rf.com/images/rednaxel/rednaxel1002/rednaxel100200080/6452416-wooden-bottle-and-wineglass-Stock-Photo.jpg"/>
-      <img src="http://previews.123rf.com/images/rednaxel/rednaxel1002/rednaxel100200080/6452416-wooden-bottle-and-wineglass-Stock-Photo.jpg"/></a>
-  <% else %>
-    <a href="https://cdn-ssl.s7.disneystore.com/is/image/DisneyShopping/7512055880150"/>
-      <img src="https://cdn-ssl.s7.disneystore.com/is/image/DisneyShopping/7512055880150"/></a>
-  <% end %>
+  <a href="/products/<%= product.id %> ">
+    <img src="<%= product.photo_url %>" />
+  </a>
 
     <h3> <%= product.name %> </h3>
 

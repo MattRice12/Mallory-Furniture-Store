@@ -16,6 +16,7 @@
 
 /*********** GENERAL ****************/
 
+
 nav {
   overflow: hidden;
 }
@@ -101,14 +102,15 @@ nav body {
 
 div.index_transbox {
   float: left;
+  text-align: center;
   background-color: #E5D9A9;
   border: 1px solid black;
-  width: auto;
+  width: 260px;
   height: 450px;
 }
 
 div.index_transbox img {
-  float: left;
+  display: inline-block;
   height: 200px;
   width: auto;
   border: 1px solid black;

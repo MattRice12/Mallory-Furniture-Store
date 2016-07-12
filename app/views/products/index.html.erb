@@ -1,49 +1,32 @@
 <nav>
   <h2><a href="/" class="nav-links home">
-            <img src="https://lh6.ggpht.com/MoYMYZHfiHaoWl0uhLO2z0xZjq48a2hHnPF52zg7McCHSM8Raz-dNBI7rf4HhN2phOY=w170"/>  </a></h2>
-
+    <img src="https://lh6.ggpht.com/MoYMYZHfiHaoWl0uhLO2z0xZjq48a2hHnPF52zg7McCHSM8Raz-dNBI7rf4HhN2phOY=w170"/></a>
+  </h2>
 </nav>
-  <body>
 
-    <% products.each do |product| %>
+<body>
 
-    <div class="index_transbox">
-      <% if product.name.downcase.include?("lamp")%>
-        <a href="/products/<%= product.id %> ">
-          <img src="http://ab.weimgs.com/weimgs/ab/images/wcm/products/201616/0062/small-pillar-table-lamp-marble-c.jpg"/>
-        </a>
-      <% elsif product.name.downcase.include?("plate") %>
-        <a href="/products/<%= product.id %> ">
-          <img src="http://www.bluepheasant.com/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/b/l/bluepheasant_eleni_white_plates.jpg"/></a>
-      <% elsif product.name.downcase.include?("shirt") %>
-        <a href="/products/<%= product.id %> ">
-          <img src="http://www.chainmail.net/images/uploads/steel-shirt-front.jpg"/></a>
-      <% elsif product.name.downcase.include?("pants") %>
-        <a href="/products/<%= product.id %> ">
-          <img src="https://cdnc.lystit.com/photos/7b10-2014/07/22/berek-gold-copper-reptile-print-pants-6-product-1-21937480-3-928234625-normal.jpeg"/></a>
-      <% elsif product.name.downcase.include?("bottle") %>
-        <a href="/products/<%= product.id %> ">
-          <img src="http://previews.123rf.com/images/rednaxel/rednaxel1002/rednaxel100200080/6452416-wooden-bottle-and-wineglass-Stock-Photo.jpg"/></a>
-      <% else %>
-        <a href="/products/<%= product.id %> ">
-          <img src="https://cdn-ssl.s7.disneystore.com/is/image/DisneyShopping/7512055880150"/></a>
-      <% end %>
+  <% products.each do |product| %>
 
+  <div class="index_transbox">
+    <a href="/products/<%= product.id %> ">
+      <img src="<%= product.photo_url %>" />
+    </a>
 
-      <h3 class="item"><a href="/products/<%= product.id %>"> <%= product.name %></a></h3>
+    <h3 class="item"><a href="/products/<%= product.id %>"> <%= product.name %></a></h3>
 
-      <p><%= "Quality: #{product.condition}" %></p>
+    <p><%= "Quality: #{product.condition}" %></p>
 
-      <p><%= "Price: $#{product.discount}" %>
-        <% if product.on_clearance %>
-          <%= " - Clearance: 10% off! (Original price = $#{(product.price / 0.9).round})" if product.condition.downcase == 'fair' %>
-          <%= " - Clearance: 20% off! (Original price = $#{(product.price / 0.8).round})" if product.condition.downcase == 'good' %>
-        <% end %></p>
+    <p><%= "Price: $#{product.discount}" %>
+      <% if product.on_clearance %>
+        <%= " - Clearance: 10% off! (Original price = $#{(product.price / 0.9).round})" if product.condition.downcase == 'fair' %>
+        <%= " - Clearance: 20% off! (Original price = $#{(product.price / 0.8).round})" if product.condition.downcase == 'good' %>
+      <% end %></p>
 
-      <p><%= "#{product.quantity} items left in stock!" %></p>
+    <p><%= "#{product.quantity} items left in stock!" %></p>
 
-    </div>
+  </div>
 
-  </body>
+</body>
 
 <% end %>
