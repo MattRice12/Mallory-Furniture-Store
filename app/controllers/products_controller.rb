@@ -1,7 +1,9 @@
 class ProductsController < ApplicationController
   def index
     render template: 'products/index.html.erb', locals: {
-      products: Product.all
+      products: Product.all,
+      product1: Product.find(1),
+      product2: Product.find(2)
     }
   end
 

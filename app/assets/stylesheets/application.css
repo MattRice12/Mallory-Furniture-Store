@@ -14,6 +14,7 @@
  *= require_self
  */
 
+/*********** GENERAL ****************/
 
 nav {
   overflow: hidden;
@@ -22,7 +23,6 @@ nav {
 nav {
   background: #E5D9A9;
   border: 1px solid black;
-
 }
 
 /************ DASHBOARD **************/
@@ -64,26 +64,10 @@ nav body {
   text-align: center;
   border-radius: 5px;
   color: white;
-  font-weight: bold;
   text-decoration: none;
 }
 
-/**************************/
-
-h3 {
-  text-align: center;
-  background: white;
-  border: 1px solid black;
-}
-
-nav div {
-  opacity: 0.5;
-}
-
-h5 {
-  margin: 5px;
-}
-
+/****************************************/
 
 /********** HOME/BACK BUTTONS ***********/
 
@@ -91,7 +75,6 @@ h5 {
   float: right;
   height: 50px;
   width: 50px;
-
   margin: 10px;
 }
 
@@ -102,8 +85,19 @@ h5 {
   margin: 10px;
 }
 
-/********** BUTTONS ***********/
+/*****************************************/
 
+/************* Item pictures *************/
+
+.item {
+  border: 1px solid #858782;
+  text-align: center;
+  background: #E5D9A9;
+}
+
+/*************************************************/
+
+/************** Item Descriptions : INDEX ****************/
 
 div.index_transbox {
   float: left;
@@ -114,7 +108,7 @@ div.index_transbox {
 }
 
 div.index_transbox img {
-  height: 132px;
+  height: auto;
   width: 200px;
   border: 1px solid black;
   margin: 30px;
@@ -126,21 +120,37 @@ div.index_transbox p {
   color: #000;
 }
 
+
+/************** Item Descriptions : SHOW ****************/
+
 div.show_transbox {
-  float: left;
+  height: 400px;
+  float: center;
   background-color: #E5D9A9;
   border: 1px solid black;
 }
 
 div.show_transbox img {
-  height: 132px;
-  width: 200px;
+  float: left;
+  height: 300px;
+  width: 300px;
   border: 1px solid black;
+  position: relative;
+  left: 5%;
   margin: 30px;
 }
 
+div.show_transbox h3 {
+  text-align: left;
+  position: relative;
+  left: 10%;
+  padding-top: 2%;
+}
+
 div.show_transbox p {
-  margin: 3%;
+  text-align: left;
+  position: relative;
+  left: 10%;
   font-weight: bold;
   color: #000;
 }

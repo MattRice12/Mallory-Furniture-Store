@@ -10,15 +10,15 @@
       <div class="index_transbox">
 
           <a href="/products/<%= product.id %>">
-            <% if Product.select(:name).where("name LIKE '%bag%'")%>
-              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Hermes_Ostrich_Birkin_Bag.jpg"/></a>
+            <% if product1 %>
+              <img src="https://s-media-cache-ak0.pinimg.com/564x/ab/91/63/ab9163124947a001a497857eaae8f0f6.jpg"/></a>
 
-            <% elsif Product.select(:name).where("name LIKE '%knife%'")%>
+            <% elsif product2 %>
               <img src="http://www.sabatier-shop.com/client/gfx/photos/produit/244.jpg"/></a>
             <%end%>
 
 
-      <h3><a href="/products/<%= product.id %>"> <%= product.name %></a></h3>
+      <h3 class="item"><a href="/products/<%= product.id %>"> <%= product.name %></a></h3>
 
       <p><%= "Quality: #{product.condition}" %></p>
 
