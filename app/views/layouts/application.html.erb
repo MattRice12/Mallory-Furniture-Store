@@ -9,13 +9,11 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <nav>
-      <body background="http://www.ezdecorator.com/img/gallery/218796-7.jpg">
-    <h1 class="Business_Name"> Mallory Furniture </h1></body>
-  </nav>
 
-<body>
-    <%= yield %>
-</body>
+  <body>
+    <nav><h1 class="business-name"><a href="/products/">Mallory Furniture</a></h1></nav>
+
+      <%= yield %>
+  </body>
 
 </html>
