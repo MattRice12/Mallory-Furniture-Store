@@ -13,20 +13,20 @@
         <img src="<%= product.prod_url %>" />
       </a>
 
-    <h3 class="cat-list"><a href="/products/"> <%= product.name %></a></h3>
+    <h3 class="item"><a href="/products/<%= product.id %>"> <%= product.name %></a></h3>
 
     <p><%= "Quality: #{product.condition}" %></p>
 
-    <p><%= "Price: $#{product.discount}" %>
+    <p1><%= "Price: $#{product.discount}" %>
       <% if product.on_clearance %>
         <%= " - Clearance: 10% off! (Original price = $#{(product.price / 0.9).round})" if product.condition.downcase == 'fair' %>
         <%= " - Clearance: 20% off! (Original price = $#{(product.price / 0.8).round})" if product.condition.downcase == 'good' %>
       <% end %>
-    </p>
+    </p1>
 
-    <p><%= "#{product.quantity} items left in stock!" %></p>
+    <p2><%= "#{product.quantity} items left in stock!" %></p2>
 
-    <p><a href="/categories/"><%= "Back to category list" %></a></p>
+    <p><a href="/categories/" class="cat-prod"><%= "Back to category list" %></a></p>
 
   </div>
   <% end %>

@@ -64,7 +64,7 @@ body {
   display: block;
   width: 170px;
   height: 15px;
-  background: #307CB5;
+  background: #7EA6CB;
   padding: 10px;
   margin: 0;
   text-align: center;
@@ -72,6 +72,11 @@ body {
   color: white;
   text-decoration: none;
   font-family: -apple-system, "Helvetica", Arial, sans-serif;
+}
+
+.button:hover {
+  background-color: #6687A6;
+  transition: all .1s;
 }
 
 /****************************************/
@@ -136,6 +141,12 @@ div h2 {
   text-decoration: none;
   color: white;
   font-family: "Helvetica", Arial, sans-serif;
+  transition: all .1s;
+}
+
+.item a:hover {
+  color: #2E3E4F;
+  transition: all .1s;
 }
 
 /*************************************************/
@@ -244,8 +255,25 @@ div.show_transbox p {
 }
 
 .cat-back:hover {
-  background: #86B2D9;
+  background: #AAC8E5;
   transition: all 0.1s;
 }
 
+.cat-prod {
+  float: right;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 5px;
+  position: relative;
+  top: 78px;
+  text-decoration: none;
+  color: white;
+  font-family: "Helvetica", Arial, sans-serif;
+  transition: all 0.1s;
+}
+
+
+.cat-list a {
+  text-decoration: none;
+}
 /*******************************/
