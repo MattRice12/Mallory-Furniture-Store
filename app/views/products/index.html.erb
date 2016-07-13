@@ -24,6 +24,8 @@
 
     <p><%= "#{product.quantity} items left in stock!" %></p>
 
+    <p><%= "Category: #{Category.select(:title).where('id = [product.category_id - 1]')}" %></p>
+
   </div>
 
 </div>

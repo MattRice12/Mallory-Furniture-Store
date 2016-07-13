@@ -153,8 +153,9 @@ div.index_transbox {
 
 div.index_transbox img {
   display: inline-block;
-  height: 200px;
-  width: auto;
+  min-height: 132px;
+  max-height: 132px;
+  width: 197px;
   border: 1px solid black;
   margin: 30px;
 }
