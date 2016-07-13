@@ -1,45 +1,48 @@
 <div>
-  <h2><a href="/categories/" class="back"> <img src="http://downloadicons.net/sites/default/files/returns--icon-30696.png"/> </a>
-  <h2><a href="/" class="home">  <img src="http://www.bestpeer.com/img/home.png"/> </a>
+  <h2>
+    <%= link_to("/categories/", class: "nav-links back") do %>
+      <%= image_tag("http://downloadicons.net/sites/default/files/returns--icon-30696.png") %>
+    <% end %>
+  </h2>
+  <h2>
+    <%= link_to("/", class: "nav-links home") do %>
+      <%= image_tag("http://www.bestpeer.com/img/home.png") %>
+    <% end %>
   </h2>
 </div>
 
 <div>
 
   <% products.each do |product| %>
+    <% Category.all.each do |cat| %>
+      <% if cat.id == product.category_id %>
 
-  <% Category.all.each do |cat| %>
-    <% if cat.id == product.category_id %>
+        <div class="index_transbox">
 
-      <div class="index_transbox">
-
-        <%= link_to "/products/#{product.id}" do %>
-          <%= image_tag(product.prod_url) %>
-        <% end %>
-
-        <h3 class="item">
-          <%= link_to product.name, "/products/#{product.id}" %>
-        </h3>
-
-        <p><%= "Quality: #{product.condition}" %></p>
-
-        <p1 class="price"><%= "Price: $#{product.discount}" %>
-          <% if product.on_clearance %>
-            <%= " - Clearance: 10% off! (Original price = $#{(product.price / 0.9).round})" if product.condition.downcase == 'fair' %>
-            <%= " - Clearance: 20% off! (Original price = $#{(product.price / 0.8).round})" if product.condition.downcase == 'good' %>
+          <%= link_to "/products/#{product.id}" do %>
+            <%= image_tag(product.prod_url) %>
           <% end %>
-        </p1>
 
-        <p2 class="quantity"><%= "#{product.quantity} items left in stock!" %></p2>
+          <h3 class="item">
+            <%= link_to product.name, "/products/#{product.id}" %>
+          </h3>
 
-        <p><a href="/categories/<%=cat.id%>" class="cat-back"><%= "Back to #{cat.title}" %></a></p>
+          <p><%= "Quality: #{product.condition}" %></p>
 
-      </div>
+          <p class="price"><%= "Price: $#{product.discount}" %>
+            <% if product.on_clearance %>
+              <%= " - Clearance: 10% off! (Original price = $#{(product.price / 0.9).round})" if product.condition.downcase == 'fair' %>
+              <%= " - Clearance: 20% off! (Original price = $#{(product.price / 0.8).round})" if product.condition.downcase == 'good' %>
+            <% end %>
+          </p>
+
+          <p class="quantity"><%= "#{product.quantity} items left in stock!" %></p>
+
+          <p><%= link_to("Back to #{cat.title}", "/categories/#{cat.id}", class: "cat-back") %></p>
+
+        </div>
+      <% end %>
     <% end %>
-
-
-    <% end %>
-
   <% end %>
 
 </div>

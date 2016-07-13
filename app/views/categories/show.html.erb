@@ -1,6 +1,14 @@
 <div>
-  <h2><a href="/categories/" class="nav-links back"> <img src="http://downloadicons.net/sites/default/files/returns--icon-30696.png"/> </a></h2>
-  <h2><a href="/" class="nav-links home">  <img src="http://www.bestpeer.com/img/home.png"/> </a></h2>
+  <h2>
+    <%= link_to("/categories/", class: "nav-links back") do %>
+      <%= image_tag("http://downloadicons.net/sites/default/files/returns--icon-30696.png") %>
+    <% end %>
+  </h2>
+  <h2>
+    <%= link_to("/", class: "nav-links home") do %>
+      <%= image_tag("http://www.bestpeer.com/img/home.png") %>
+    <% end %>
+  </h2>
 </div>
 
 <div>
