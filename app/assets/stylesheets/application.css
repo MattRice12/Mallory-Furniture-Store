@@ -22,14 +22,12 @@ nav {
 }
 
 nav {
-  background: #E5D9A9;
   border: 1px solid black;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   height: 45px;
-}
-
-.main-header {
-  height: 200px;
+  text-align: center;
+  background-color: #2E3E4F;
+  padding-left: 10px;
 }
 
 /************ DASHBOARD **************/
@@ -38,15 +36,7 @@ nav {
   background: #2E3E4F;
   text-decoration: none;
   color: white;
-}
-
-nav {
-  text-align: center;
-  background-color: #2E3E4F;
-  /*border: 1px solid white;
-  border-top: 15px solid white;
-  border-bottom: 10px solid white;*/
-  padding-left: 10px;
+  font-family: -apple-system, "Helvetica", Arial, sans-serif;
 }
 
 body {
@@ -58,6 +48,7 @@ body {
   padding: 25px 5px;
   margin: 0;
   border: none;
+  font-family: -apple-system, "Helvetica", Arial, sans-serif;
 }
 
 .dash2 {
@@ -65,6 +56,7 @@ body {
   padding: 15px 5px;
   margin: 0;
   border: none;
+  font-family: -apple-system, "Helvetica", Arial, sans-serif;
 }
 
 .button {
@@ -79,6 +71,7 @@ body {
   border-radius: 5px;
   color: white;
   text-decoration: none;
+  font-family: -apple-system, "Helvetica", Arial, sans-serif;
 }
 
 /****************************************/
@@ -98,12 +91,16 @@ div h2 {
   width: auto;
   margin-right: 10px;
   background-color: #2F9E84;
+  position: relative;
+  top: -87px;
+  right: -10px;
+  transition: all 0.1s;
 }
 
-/*.nav-links.home:hover {
-  border-bottom: 10px solid white;
+.nav-links.home:hover img{
+  background-color: #587691;
   transition: all 0.1s;
-}*/
+}
 
 .nav-links.back img {
   float: right;
@@ -111,12 +108,18 @@ div h2 {
   width: auto;
   margin-right: 10px;
   background-color: #7D0708;
+  position: relative;
+  top: -72px;
+  right: -10px;
+  transition: all .1s;
+
 }
-/*
-.nav-links.back:hover {
-  border-bottom: 10px solid white;
-  transition: all 0.1s;
-}*/
+
+.nav-links.back img:hover {
+  background-color: #587691;
+  transition: all .1s;
+
+}
 
 
 
@@ -125,9 +128,14 @@ div h2 {
 /************* Item pictures *************/
 
 .item {
-  border: 1px solid #858782;
   text-align: center;
-  background: #E5D9A9;
+  background: #587691;
+}
+
+.item a {
+  text-decoration: none;
+  color: white;
+  font-family: "Helvetica", Arial, sans-serif;
 }
 
 /*************************************************/
@@ -137,7 +145,7 @@ div h2 {
 div.index_transbox {
   float: left;
   text-align: center;
-  background-color: #E5D9A9;
+  background-color: #7EA6CB;
   border: 1px solid black;
   width: 260px;
   height: 450px;
@@ -168,7 +176,7 @@ div.index_transbox p {
 div.show_transbox {
   height: 400px;
   float: center;
-  background-color: #E5D9A9;
+  background-color: #7EA6CB;
   border: 1px solid black;
 }
 

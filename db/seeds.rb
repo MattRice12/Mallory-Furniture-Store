@@ -6,6 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+adjective_attribute = ["Tall", "Small", "Fat", "Sexy", "Salty"]
+adjective_textile = ["Wooden", "Cotton", "Diamond", "Down", "Wet", "Sturdy", "Silver", "Hairy"]
+product_type_arr = ["Desk", "Chair", "Pillow", "Bed", "Couch", "Rug"]
+
+category = ["Desks", "Chairs", "Pillows", "Beds", "Couches", "Rugs"]
+
 condition_arr = ["Good", "Fair", "Bad", "Absolute Shit"]
 
 product_image = {
@@ -17,14 +23,19 @@ product_image = {
   "default" => "https://cdn-ssl.s7.disneystore.com/is/image/DisneyShopping/7512055880150"
 }
 
-5.times do
-  Product.create!(name: Faker::Commerce.product_name,
-                  price: rand(1..100).round,
-                  condition: condition_arr.sample,
-                  on_clearance: rand(0..1),
-                  quantity: rand(1..100)
-                  )
+category.each do |cat|
+  Category.create!(title: "#{cat}")
+
+  3.times do
+    Product.create!(name: "#{adjective_attribute.sample} #{adjective_textile.sample} #{product_type_arr.sample}",
+                    price: rand(1..1000).round,
+                    condition: condition_arr.sample,
+                    on_clearance: rand(0..1),
+                    quantity: rand(1..20),
+                    )
+  end
 end
+
 
 Product.all.each do |prod|
   if prod.name.downcase.include?("plate")
@@ -44,6 +55,28 @@ Product.all.each do |prod|
     prod.save
   else
     prod.photo_url = product_image.fetch("default")
+    prod.save
+  end
+end
+
+Product.all.each do |prod|
+  if prod.name.downcase.include?("desk")
+    prod.category_id = 1
+    prod.save
+  elsif prod.name.downcase.include?("chair")
+    prod.category_id = 2
+    prod.save
+  elsif prod.name.downcase.include?("pillow")
+    prod.category_id = 3
+    prod.save
+  elsif prod.name.downcase.include?("bed")
+    prod.category_id = 4
+    prod.save
+  elsif prod.name.downcase.include?("couch")
+    prod.category_id = 5
+    prod.save
+  elsif prod.name.downcase.include?("rug")
+    prod.category_id = 6
     prod.save
   end
 end
