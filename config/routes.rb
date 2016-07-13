@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   get 'products/:id', to: 'products#show'
   get 'categories/:id', to: 'categories#show'
 
-  get 'products/', to: 'products#index'
-  get 'categories/', to: 'categories#index'
+  get 'products', to: 'products#index'
+  get 'categories', to: 'categories#index'
 
   root 'dashboard#index'
 

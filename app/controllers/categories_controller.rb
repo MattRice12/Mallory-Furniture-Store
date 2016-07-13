@@ -10,7 +10,7 @@ class CategoriesController < ApplicationController
     if Category.exists?(params[:id])
       render template: 'categories/show.html.erb', locals: {
         category: Category.find(params[:id]),
-        product: Product.find(params[:id])
+        products: Product.all
       }
     else
       render html: "Not Found", status: 404

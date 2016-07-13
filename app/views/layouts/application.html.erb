@@ -11,7 +11,11 @@
 
 
   <body>
-    <nav><h1 class="business-name"><a href="/">Mallory Furniture</a></h1></nav>
+    <nav>
+      <h1 class="business-name">
+        <%= link_to("Mallory Furniture", "/") %>
+      </h1>
+    </nav>
 
       <%= yield %>
   </body>

@@ -1,0 +1,25 @@
+@import 'variables';
+
+.main-header {
+  display: block;
+  float: right;
+  text-align: right;
+  font-family: $font-family;
+  padding: 25px 5px;
+  .button {
+    width: 170px;
+    height: 15px;
+    background: $button-color;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: $text-color;
+    text-decoration: none;
+    transition: all .1s;
+
+  }
+  .button:hover {
+    background-color: $button-color-hover;
+    transition: all .1s;
+  }
+}

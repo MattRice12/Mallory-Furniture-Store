@@ -1,14 +1,15 @@
 <div>
-  <h2><a href="/products/" class="nav-links back"> <img src="http://downloadicons.net/sites/default/files/returns--icon-30696.png"/> </a></h2>
+  <h2><a href="/categories" class="nav-links back"> <img src="http://downloadicons.net/sites/default/files/returns--icon-30696.png"/> </a></h2>
   <h2><a href="/" class="nav-links home">  <img src="http://www.bestpeer.com/img/home.png"/> </a></h2>
 </div>
 
 <div>
 
 <div class="show_transbox">
-  <a href="/products/<%= product.id %> ">
-    <img src="<%= product.prod_url %>" />
-  </a>
+
+  <%= link_to "/products/#{product.id}" do %>
+    <%= image_tag(product.prod_url) %>
+  <% end %>
 
     <h3> <%= product.name %> </h3>
 
