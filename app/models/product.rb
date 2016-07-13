@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  belongs_to :category
   validates :name, length: { minimum: 2, maximum: 80 }
   validates :price, numericality: { only_integer: true }
   validates :condition, length: { minimum: 1, maximum: 200}
