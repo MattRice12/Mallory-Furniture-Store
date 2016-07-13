@@ -7,7 +7,7 @@
 
 <div class="show_transbox">
   <a href="/products/<%= product.id %> ">
-    <img src="<%= product.photo_url %>" />
+    <img src="<%= product.prod_url %>" />
   </a>
 
     <h3> <%= product.name %> </h3>
@@ -20,7 +20,7 @@
           <%= " - Clearance: 20% off! (Original price = $#{(product.price / 0.8).round})" if product.condition.downcase == 'good' %>
         <% end %></p>
 
-      <p><%= "#{product.quantity} items left in stock!" %></p>
+      <p><%= " LIST CATEGORY HERE " %></p>
   </div>
 
 

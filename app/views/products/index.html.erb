@@ -1,5 +1,5 @@
 <div>
-  <h2><a href="/products/" class="nav-links back"> <img src="http://downloadicons.net/sites/default/files/returns--icon-30696.png"/> </a></h2>
+  <h2><a href="/categories/" class="nav-links back"> <img src="http://downloadicons.net/sites/default/files/returns--icon-30696.png"/> </a></h2>
   <h2><a href="/" class="nav-links home">  <img src="http://www.bestpeer.com/img/home.png"/> </a></h2>
 </div>
 
@@ -7,27 +7,37 @@
 
   <% products.each do |product| %>
 
-  <div class="index_transbox">
-    <a href="/products/<%= product.id %> ">
-      <img src="<%= product.photo_url %>" />
-    </a>
+  <% Category.all.each do |cat| %>
+    <% if cat.id == product.category_id %>
 
-    <h3 class="item"><a href="/products/<%= product.id %>"> <%= product.name %></a></h3>
+    <div class="index_transbox">
 
-    <p><%= "Quality: #{product.condition}" %></p>
+      <a href="/products/<%= product.id %> ">
+        <img src="<%= product.prod_url %>" />
+      </a>
 
-    <p><%= "Price: $#{product.discount}" %>
-      <% if product.on_clearance %>
-        <%= " - Clearance: 10% off! (Original price = $#{(product.price / 0.9).round})" if product.condition.downcase == 'fair' %>
-        <%= " - Clearance: 20% off! (Original price = $#{(product.price / 0.8).round})" if product.condition.downcase == 'good' %>
-      <% end %></p>
+      <h3 class="item"><a href="/products/<%= product.id %>"> <%= product.name %></a></h3>
 
-    <p><%= "#{product.quantity} items left in stock!" %></p>
+      <p><%= "Quality: #{product.condition}" %></p>
 
-    <p><%= "Category: #{Category.select(:title).where('id = [product.category_id - 1]')}" %></p>
+      <p1><%= "Price: $#{product.discount}" %>
+        <% if product.on_clearance %>
+          <%= " - Clearance: 10% off! (Original price = $#{(product.price / 0.9).round})" if product.condition.downcase == 'fair' %>
+          <%= " - Clearance: 20% off! (Original price = $#{(product.price / 0.8).round})" if product.condition.downcase == 'good' %>
+        <% end %>
+      </p1>
 
-  </div>
+      <p2><%= "#{product.quantity} items left in stock!" %></p2>
+
+      <p><a href="/categories/" class="cat-back"><%= "Back to #{cat.title}" %></a></p>
+
+
+    </div>
+    <% end %>
+
+
+    <% end %>
+
+  <% end %>
 
 </div>
-
-<% end %>

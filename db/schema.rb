@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 20160712231130) do
 
   create_table "categories", force: :cascade do |t|
     t.text     "title",      null: false
+    t.string   "cat_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -26,7 +27,7 @@ ActiveRecord::Schema.define(version: 20160712231130) do
     t.integer  "quantity",                     null: false
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
-    t.string   "photo_url"
+    t.string   "prod_url"
     t.integer  "category_id"
     t.index ["category_id"], name: "index_products_on_category_id"
   end

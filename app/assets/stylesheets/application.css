@@ -163,11 +163,33 @@ div.index_transbox img {
 div.index_transbox h3 {
   text-align: center;
   border: none;
+  margin-bottom: 0;
 }
 
 div.index_transbox p {
   text-align: center;
-  margin: 3%;
+  text-align: center;
+  margin: 1%;
+  height: 24px;
+  font-weight: bold;
+  color: #000;
+}
+
+div.index_transbox p1 {
+  text-align: center;
+  text-align: center;
+  display: block;
+  height: 37px;
+  font-weight: bold;
+  color: #000;
+}
+
+div.index_transbox p2 {
+  text-align: center;
+  text-align: center;
+  display: block;
+  height: 22px;
+  padding: 4px;
   font-weight: bold;
   color: #000;
 }
@@ -205,3 +227,25 @@ div.show_transbox p {
   font-weight: bold;
   color: #000;
 }
+
+/********************************/
+
+.cat-back {
+  float: right;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 5px;
+  position: relative;
+  top: 78px;
+  text-decoration: none;
+  color: white;
+  font-family: "Helvetica", Arial, sans-serif;
+  transition: all 0.1s;
+}
+
+.cat-back:hover {
+  background: #86B2D9;
+  transition: all 0.1s;
+}
+
+/*******************************/

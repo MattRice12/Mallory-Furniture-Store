@@ -1,0 +1,21 @@
+<div>
+  <h2><a href="/products/" class="nav-links back"> <img src="http://www.primalcom.com/images/Icon-arrow-right.png"/> </a></h2>
+  <h2><a href="/" class="nav-links home">  <img src="http://www.bestpeer.com/img/home.png"/> </a></h2>
+</div>
+
+<div>
+
+  <% categories.each do |cats| %>
+
+    <div class="index_transbox">
+
+      <a href="/categories/<%= cats.id %> ">
+        <img src="<%= cats.cat_url %>" />
+      </a>
+
+      <h3 class="cat-list"><a href="/categories/<%= cats.id %>"> <%= cats.title %></a></h3>
+
+    </div>
+  <% end %>
+
+</div>

@@ -35,7 +35,9 @@ DEFAULT_PIC = "https://cdn-ssl.s7.disneystore.com/is/image/DisneyShopping/751205
 adjective_attribute = ["Sassy", "Small", "Fat", "Sexy", "Fuzzy"]
 adjective_textile = ["Wooden", "Cotton", "Diamond", "Down", "Wet", "Sturdy", "Silver", "Hairy"]
 product_type_arr = ["Desk", "Chair", "Pillow", "Bed", "Couch", "Rug"]
-category = ["Desks", "Chairs", "Pillows", "Beds", "Couches", "Rugs"]
+
+kategory = ["Desks", "Chairs", "Pillows", "Beds", "Couches", "Rugs"]
+
 condition_arr = ["Good", "Fair", "Bad", "Absolute Shit"]
 product_image = {
                  "desk" => [DESK_PIC1, DESK_PIC2, DESK_PIC3],
@@ -47,8 +49,8 @@ product_image = {
                  "default" => [DEFAULT_PIC]
                 }
 
-category.each do |cat|
-  Category.create!(title: "#{cat}")
+kategory.each do |cat|
+  category = Category.create(title: "#{cat}")
 
   3.times do
     Product.create!(name: "#{adjective_attribute.sample} #{adjective_textile.sample} #{product_type_arr.sample}",
@@ -56,31 +58,32 @@ category.each do |cat|
                     condition: condition_arr.sample,
                     on_clearance: rand(0..1),
                     quantity: rand(1..20),
+                    category_id: category.id
                     )
   end
 end
 
 Product.all.each do |prod|
   if prod.name.downcase.include?("desk")
-    prod.photo_url = product_image.fetch("desk").sample
+    prod.prod_url = product_image.fetch("desk").sample
     prod.save
   elsif prod.name.downcase.include?("chair")
-    prod.photo_url = product_image.fetch("chair").sample
+    prod.prod_url = product_image.fetch("chair").sample
     prod.save
   elsif prod.name.downcase.include?("pillow")
-    prod.photo_url = product_image.fetch("pillow").sample
+    prod.prod_url = product_image.fetch("pillow").sample
     prod.save
   elsif prod.name.downcase.include?("bed")
-    prod.photo_url = product_image.fetch("bed").sample
+    prod.prod_url = product_image.fetch("bed").sample
     prod.save
   elsif prod.name.downcase.include?("couch")
-    prod.photo_url = product_image.fetch("couch").sample
+    prod.prod_url = product_image.fetch("couch").sample
     prod.save
   elsif prod.name.downcase.include?("rug")
-    prod.photo_url = product_image.fetch("rug").sample
+    prod.prod_url = product_image.fetch("rug").sample
     prod.save
   else
-    prod.photo_url = product_image.fetch("default")
+    prod.prod_url = product_image.fetch("default")
     prod.save
   end
 end
@@ -104,5 +107,30 @@ Product.all.each do |prod|
   elsif prod.name.downcase.include?("rug")
     prod.category_id = 6
     prod.save
+  end
+end
+
+Category.all.each do |cats|
+  if cats.title.downcase.include?("desk")
+    cats.cat_url = product_image.fetch("desk").second
+    cats.save
+  elsif cats.title.downcase.include?("chair")
+    cats.cat_url = product_image.fetch("chair").first
+    cats.save
+  elsif cats.title.downcase.include?("pillow")
+    cats.cat_url = product_image.fetch("pillow").first
+    cats.save
+  elsif cats.title.downcase.include?("bed")
+    cats.cat_url = product_image.fetch("bed").first
+    cats.save
+  elsif cats.title.downcase.include?("couch")
+    cats.cat_url = product_image.fetch("couch").first
+    cats.save
+  elsif cats.title.downcase.include?("rug")
+    cats.cat_url = product_image.fetch("rug").first
+    cats.save
+  else
+    cats.cat_url = product_image.fetch("default")
+    cats.save
   end
 end
