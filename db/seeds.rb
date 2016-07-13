@@ -52,7 +52,7 @@ product_image = {
 kategory.each do |cat|
   category = Category.create(title: "#{cat}")
 
-  3.times do
+  5.times do
     Product.create!(name: "#{adjective_attribute.sample} #{adjective_textile.sample} #{product_type_arr.sample}",
                     price: rand(1..1000).round,
                     condition: condition_arr.sample,
