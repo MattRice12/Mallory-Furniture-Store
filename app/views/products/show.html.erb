@@ -27,26 +27,49 @@
 
       <form action="/products" method="post">
 
-        Name: <input type='text' name='name'></textarea>
+        <div class="input-group">
+          <label for="name">Name</label>
+          <%= text_field_tag :name, product.name %>
+        </div>
 
-        Price: <input type='text' name='price'></textarea>
+        <div class="input-group">
+          <label for="price">Price</label>
+          <%= text_field_tag :price, product.price %>
+        </div>
 
-        Condition: <select>
-            <option value='Good'>Good</option>
-            <option value='Fair'>Fair</option>
-            <option value='Bad'>Bad</option>
-            <option value='Absolute Shit'>Absolute Shit</option>
-          </select>
+        <div class="input-group">
+          <label for="quantity">Quantity</label>
+          <%= text_field_tag :quantity, product.quantity %>
+        </div>
 
+        <div class="input-group">
+          <label for="condition">Condition</label>
+            <select name="condition", id="condition">
+              <option value='Good'>Good</option>
+              <option value='Fair'>Fair</option>
+              <option value='Bad'>Bad</option>
+              <option value='Absolute Shit'>Absolute Shit</option>
+            </select>
+        </div>
 
-        On Clearance? <select>
-            <option value=True>True</option>
-            <option value=False>False</option>
-          </select>
+        <div class="input-group">
+          <label for="on_clearance">On Clearance</label>
+            <select name="on_clearance", id="condition">
+              <option value=True>True</option>
+              <option value=False>False</option>
+            </select>
+        </div>
 
-        Quantity: <input type='text' name='quantity'></textarea>
+        <div class="input-group">
+          <label for="prod_url">Image Link</label>
+          <%= text_field_tag :prod_url, product.prod_url %>
+        </div>
 
-        Image Link: <input type='text' name='prod_url'></textarea>
+        <div class="input-group">
+          <label for="category">Category</label>
+          <%= text_field_tag :category_id, product.category_id %>
+        </div>
+
 
         <input type='submit' value="Submit"/>
 

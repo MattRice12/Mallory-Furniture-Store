@@ -26,22 +26,20 @@
 
     <div class="input-group">
       <label for="condition">Condition</label>
-        <select>
+        <select name="condition", id="condition">
           <option value='Good'>Good</option>
           <option value='Fair'>Fair</option>
           <option value='Bad'>Bad</option>
           <option value='Absolute Shit'>Absolute Shit</option>
         </select>
-        <%= select_tag :condition, product.condition %>
     </div>
 
     <div class="input-group">
       <label for="on_clearance">On Clearance</label>
-        <select>
+        <select name="on_clearance", id="condition">
           <option value=True>True</option>
           <option value=False>False</option>
         </select>
-        <%= select_tag :on_clearance, product.on_clearance %>
     </div>
 
     <div class="input-group">

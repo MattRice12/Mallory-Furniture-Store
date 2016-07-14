@@ -32,7 +32,7 @@ class ProductsController < ApplicationController
     product.prod_url = params[:prod_url]
     product.category_id = params[:category_id]
     if product.save
-      redirect_to "products/#{product.id}"
+      redirect_to "/products/#{product.id}"
     else
       render template: "/products/new.html.erb", locals: {
         product: product
@@ -58,7 +58,7 @@ class ProductsController < ApplicationController
     if product.save
       redirect_to "/product/#{product.id}"
     else
-      render template: 'products/new.html.erb', locals: {
+      render template: 'products/edit.html.erb', locals: {
         product: product
       }
     end
