@@ -16,4 +16,29 @@ class ProductsController < ApplicationController
     end
   end
 
+  def new
+    render locals: {
+      product: Product.new
+    }
+  end
+
+  def create
+    product = Product.new
+    product.name = params[:name]
+    product.price = params[:price]
+    product.condition = params[:condition]
+    product.on_clearance = params[:on_clearance]
+    product.quantity = params[:quantity]
+    product.prod_url = params[:prod_url]
+    if product.save
+      redirect_to "products/#{product.id}"
+    else
+      render template: "/products/new.html.erb", locals: {
+        product: product
+      }
+    end
+  end
+
+
+
 end
