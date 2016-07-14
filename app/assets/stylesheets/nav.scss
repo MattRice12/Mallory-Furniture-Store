@@ -11,7 +11,7 @@ div {
       height: 40px;
       width: auto;
       margin-right: 10px;
-      background-color: #7D0708;
+      background-color: $banner-color;
       position: relative;
       top: -28px;
       right: 30px;
@@ -26,7 +26,7 @@ div {
       height: 40px;
       width: auto;
       margin-right: 10px;
-      background-color: #2F9E84;
+      background-color: $banner-color;
       position: relative;
       top: -83px;
       right: -10px;
@@ -41,7 +41,7 @@ div {
       height: 40px;
       width: auto;
       margin-right: 10px;
-      background-color: #7D0708;
+      background-color: $banner-color;
       position: relative;
       top: -138px;
       right: 70px;

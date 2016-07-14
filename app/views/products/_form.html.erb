@@ -7,21 +7,21 @@
     <% end %>
   <% end %>
 
-  <%= form_tag(form_url, method: form_action) do %>
+  <%= form_for(product) do |f| %>
 
     <div class="input-group">
       <label for="name">Name</label>
-      <%= text_field_tag :name, product.name %>
+      <%= f.text_field :name %>
     </div>
 
     <div class="input-group">
       <label for="price">Price</label>
-      <%= text_field_tag :price, product.price %>
+      <%= f.number_field :price, min: 1 %>
     </div>
 
     <div class="input-group">
       <label for="quantity">Quantity</label>
-      <%= text_field_tag :quantity, product.quantity %>
+      <%= f.number_field :quantity, min: 0 %>
     </div>
 
     <div class="input-group">
@@ -36,24 +36,21 @@
 
     <div class="input-group">
       <label for="on_clearance">On Clearance</label>
-        <select name="on_clearance", id="condition">
-          <option value=True>True</option>
-          <option value=False>False</option>
-        </select>
+        <%= f.check_box :on_clearance %>
     </div>
 
     <div class="input-group">
       <label for="prod_url">Image Link</label>
-      <%= text_field_tag :prod_url, product.prod_url %>
+      <%= f.text_field :prod_url %>
     </div>
 
     <div class="input-group">
-      <label for="category">Category</label>
-      <%= text_field_tag :category_id, product.category_id %>
+      <label for="condition">Category</label>
+        <%= f.select :category_id, options_from_collection_for_select(Category.all, :id, :title ) %>
     </div>
 
     <div class="actions">
-      <%= submit_tag submit_text %>
+      <%= f.submit  %>
     </div>
 
   <% end %>

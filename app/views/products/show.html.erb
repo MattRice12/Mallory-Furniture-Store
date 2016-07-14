@@ -25,7 +25,7 @@
 
       <h4>Edit This Product</h4>
 
-      <form action="/products" method="post">
+      <form action="/products/:id" method="put">
 
         <div class="input-group">
           <label for="name">Name</label>
@@ -34,12 +34,12 @@
 
         <div class="input-group">
           <label for="price">Price</label>
-          <%= text_field_tag :price, product.price %>
+          <%= number_field_tag :price, product.price, min: 1 %>
         </div>
 
         <div class="input-group">
           <label for="quantity">Quantity</label>
-          <%= text_field_tag :quantity, product.quantity %>
+          <%= number_field_tag :quantity, product.quantity, min: 0 %>
         </div>
 
         <div class="input-group">
@@ -54,10 +54,7 @@
 
         <div class="input-group">
           <label for="on_clearance">On Clearance</label>
-            <select name="on_clearance", id="condition">
-              <option value=True>True</option>
-              <option value=False>False</option>
-            </select>
+            <%= check_box_tag :on_clearance, product.on_clearance, false %>
         </div>
 
         <div class="input-group">
@@ -66,10 +63,9 @@
         </div>
 
         <div class="input-group">
-          <label for="category">Category</label>
-          <%= text_field_tag :category_id, product.category_id %>
+          <label for="condition">Category</label>
+            <%= select_tag :category_id, options_from_collection_for_select(Category.all, :id, :title, product.category_id) %>
         </div>
-
 
         <input type='submit' value="Submit"/>
 

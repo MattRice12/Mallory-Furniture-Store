@@ -1,18 +1,22 @@
 <div>
   <h2>
-    <%= link_to("/categories/", class: "nav-links back") do %>
+    <%= link_to(categories_path, class: "nav-links back") do %>
       <%= image_tag("http://findicons.com/files/icons/1681/siena/128/undo.png") %>
     <% end %>
   </h2>
   <h2>
-    <%= link_to("/", class: "nav-links home") do %>
-      <%= image_tag("http://www.bestpeer.com/img/home.png") %>
+    <%= link_to(root_path, class: "nav-links home") do %>
+      <%= image_tag("https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Smiley.svg/2000px-Smiley.svg.png") %>
     <% end %>
   </h2>
 
   <h2>
-    <%= link_to("/products/new", class: "nav-links new") do %>
-      <%= image_tag("https://lh4.googleusercontent.com/-Xa3l7VsfilI/VDz0yiG5SdI/AAAAAAAABQY/RITzfsvFqYQ/w800-h800/add-list-256.png") %>
+    <%= link_to(new_product_path, class: "nav-links new") do %>
+      <%= image_tag("http://emojipedia-us.s3.amazonaws.com/cache/e7/3e/e73ed4d57793a56fcb7ff8fb49ef45bc.png") %>
     <% end %>
   </h2>
 </div>
+
+
+<!-- http://www.bestpeer.com/img/home.png -->
+<!-- https://lh4.googleusercontent.com/-Xa3l7VsfilI/VDz0yiG5SdI/AAAAAAAABQY/RITzfsvFqYQ/w800-h800/add-list-256.png -->

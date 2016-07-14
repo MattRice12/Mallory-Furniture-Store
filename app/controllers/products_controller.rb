@@ -56,7 +56,7 @@ class ProductsController < ApplicationController
     product.name = params[:prod_url] if params[:prod_url].present?
     product.category_id = params[:category_id]
     if product.save
-      redirect_to "/product/#{product.id}"
+      redirect_to "/products/#{product.id}"
     else
       render template: 'products/edit.html.erb', locals: {
         product: product
