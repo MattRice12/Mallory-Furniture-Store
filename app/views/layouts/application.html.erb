@@ -14,6 +14,7 @@
     <nav>
       <h1 class="business-name">
         <%= link_to("Mallory Furniture", "/") %>
+        <%= render "shared/nav" unless @disable_nav %>
       </h1>
     </nav>
 

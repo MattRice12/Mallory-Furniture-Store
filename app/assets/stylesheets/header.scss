@@ -10,16 +10,16 @@
     width: 170px;
     height: 15px;
     background: $button-color;
+    box-shadow: 3px 3px 10px $banner-color-light;
     padding: 10px;
     text-align: center;
     border-radius: 5px;
     color: $text-color;
     text-decoration: none;
-    transition: all .1s;
 
   }
   .button:hover {
-    background-color: $button-color-hover;
-    transition: all .1s;
+    box-shadow: 10px 10px 500px white;
+    transition: all 1s;
   }
 }
