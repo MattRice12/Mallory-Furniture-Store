@@ -30,6 +30,7 @@ class ProductsController < ApplicationController
     product.on_clearance = params[:on_clearance]
     product.quantity = params[:quantity]
     product.prod_url = params[:prod_url]
+    product.category_id = params[:category_id]
     if product.save
       redirect_to "products/#{product.id}"
     else
@@ -39,6 +40,27 @@ class ProductsController < ApplicationController
     end
   end
 
+  def edit
+    render locals: {
+      product: Product.find(params[:id])
+    }
+  end
 
-
+  def update
+    product = Product.find(params[:id])
+    product.name = params[:name] if params[:name].present?
+    product.name = params[:price] if params[:price].present?
+    product.name = params[:quantity] if params[:quantity].present?
+    product.name = params[:condition]
+    product.name = params[:on_clearance]
+    product.name = params[:prod_url] if params[:prod_url].present?
+    product.category_id = params[:category_id]
+    if product.save
+      redirect_to "/product/#{product.id}"
+    else
+      render template: 'products/new.html.erb', locals: {
+        product: product
+      }
+    end
+  end
 end

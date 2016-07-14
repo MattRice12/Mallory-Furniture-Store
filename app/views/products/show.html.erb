@@ -18,3 +18,39 @@
         <% end %></p>
 
   </div>
+
+  <aside class="products">
+
+    <div class='new-product'>
+
+      <h4>Edit This Product</h4>
+
+      <form action="/products" method="post">
+
+        Name: <input type='text' name='name'></textarea>
+
+        Price: <input type='text' name='price'></textarea>
+
+        Condition: <select>
+            <option value='Good'>Good</option>
+            <option value='Fair'>Fair</option>
+            <option value='Bad'>Bad</option>
+            <option value='Absolute Shit'>Absolute Shit</option>
+          </select>
+
+
+        On Clearance? <select>
+            <option value=True>True</option>
+            <option value=False>False</option>
+          </select>
+
+        Quantity: <input type='text' name='quantity'></textarea>
+
+        Image Link: <input type='text' name='prod_url'></textarea>
+
+        <input type='submit' value="Submit"/>
+
+      </form>
+
+    </div>
+  </aside>
